@@ -28,20 +28,22 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
     }
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 15px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     .logo {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: var(--primary);
       text-decoration: none;
@@ -50,8 +52,8 @@
       gap: 8px;
     }
     .logo span {
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       color: var(--accent);
       background: #e6f6f4;
       padding: 2px 8px;
@@ -60,7 +62,9 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 28px;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
     }
     nav a {
       text-decoration: none;
@@ -71,46 +75,51 @@
     }
     nav a:hover { color: var(--primary); }
 
+    .header-sns {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .sns-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--text-sub);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .sns-chip:hover { background: var(--primary); color: #ffffff; }
+
     /* 히어로 배너 */
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #ffffff;
-      padding: 80px 24px;
+      padding: 76px 24px;
       text-align: center;
     }
-    .hero-inner {
-      max-width: 820px;
-      margin: 0 auto;
-    }
+    .hero-inner { max-width: 820px; margin: 0 auto; }
     .hero-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.16);
       padding: 6px 14px;
       border-radius: 999px;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 16px;
     }
-    .hero h1 {
-      font-size: 2.3rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: #e2e8f0;
-      margin-bottom: 32px;
-    }
-    .hero-btns {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
+    .hero p { font-size: 1.05rem; color: #e2e8f0; margin-bottom: 30px; }
+    .hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
     .btn {
       display: inline-block;
-      padding: 13px 26px;
+      padding: 12px 24px;
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
@@ -119,249 +128,281 @@
       cursor: pointer;
       border: none;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #ffffff;
-    }
+    .btn-primary { background: var(--accent); color: #ffffff; }
     .btn-primary:hover { background: #008f80; }
-    .btn-outline {
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: #ffffff;
-      background: transparent;
-    }
-    .btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
+    .btn-outline { border: 1px solid rgba(255, 255, 255, 0.55); color: #ffffff; background: transparent; }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
 
     /* 공통 섹션 스타일 */
-    section {
-      padding: 72px 24px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
+    section { padding: 72px 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 44px; }
     .section-tag {
       color: var(--accent);
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       letter-spacing: 0.05em;
-      text-transform: uppercase;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .section-title {
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 12px;
-    }
-    .section-desc {
-      color: var(--text-sub);
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    .section-title { font-size: 1.85rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; }
+    .section-desc { color: var(--text-sub); max-width: 640px; margin: 0 auto; font-size: 0.96rem; }
 
-    /* 회사소개 섹션 */
+    /* 1. 회사소개 섹션 */
     .about-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      gap: 36px;
       align-items: start;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
     .about-greeting {
       background: var(--bg-light);
-      padding: 36px;
+      padding: 32px;
       border-radius: 16px;
       border: 1px solid var(--border);
     }
-    .about-greeting h3 {
-      font-size: 1.35rem;
-      color: var(--primary);
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-    .about-greeting p {
-      color: var(--text-main);
-      margin-bottom: 14px;
-      font-size: 0.98rem;
-    }
-    .about-sign {
-      margin-top: 20px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      text-align: right;
-    }
+    .about-greeting h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 14px; line-height: 1.4; }
+    .about-greeting p { color: var(--text-main); margin-bottom: 12px; font-size: 0.96rem; }
+    .about-sign { margin-top: 18px; font-weight: 700; color: var(--primary-dark); text-align: right; }
 
-    /* 회사 개요 표 */
     .company-table {
       width: 100%;
       border-collapse: collapse;
       background: #ffffff;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
       border: 1px solid var(--border);
     }
     .company-table th, .company-table td {
-      padding: 15px 18px;
+      padding: 14px 16px;
       border-bottom: 1px solid var(--border);
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
     }
-    .company-table th {
-      width: 32%;
-      background: #f1f5f9;
-      color: var(--primary-dark);
-      font-weight: 700;
-    }
-    .company-table tr:last-child th,
-    .company-table tr:last-child td {
-      border-bottom: none;
-    }
+    .company-table th { width: 33%; background: #f1f5f9; color: var(--primary-dark); font-weight: 700; }
+    .company-table tr:last-child th, .company-table tr:last-child td { border-bottom: none; }
 
-    /* 핵심 경쟁력 4카드 */
     .strength-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
     }
     .strength-card {
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px;
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .strength-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(15, 76, 129, 0.08);
-    }
-    .strength-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-    .strength-card h4 {
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .strength-card p {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
+    .strength-icon { font-size: 1.9rem; margin-bottom: 10px; }
+    .strength-card h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; }
+    .strength-card p { font-size: 0.88rem; color: var(--text-sub); }
 
-    /* 18종 서비스 카탈로그 */
-    .services-section {
-      background: var(--bg-light);
-    }
+    /* 2. 19종 서비스 카드 */
+    .services-section { background: var(--bg-light); }
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 18px;
     }
     .service-card {
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 22px;
+      padding: 20px;
+      cursor: pointer;
       transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .service-card:hover {
       border-color: var(--primary);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(15, 76, 129, 0.09);
     }
     .service-num {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: var(--primary);
       background: #e0f2fe;
       padding: 2px 8px;
       border-radius: 4px;
-      margin-bottom: 10px;
-    }
-    .service-card h3 {
-      font-size: 1.08rem;
       margin-bottom: 8px;
-      color: var(--text-main);
     }
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--text-sub);
-    }
-
-    /* 고객문의 및 오시는 길 */
-    .contact-box {
-      background: var(--primary);
-      color: #ffffff;
-      border-radius: 16px;
-      padding: 44px 32px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
+    .service-card h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); }
+    .service-card p { font-size: 0.86rem; color: var(--text-sub); margin-bottom: 14px; }
+    .service-cta {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
       align-items: center;
-    }
-    .contact-info h3 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-    .contact-info p {
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-    .contact-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 0.98rem;
-    }
-    .contact-cta {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 28px;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .contact-cta .tel {
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: #5eead4;
-      margin: 10px 0 18px;
-      display: block;
-      text-decoration: none;
+      justify-content: space-between;
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
     }
 
-    /* 푸터 */
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 40px 24px;
-      font-size: 0.88rem;
-    }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .footer-top {
+    /* 3. 시공사례 갤러리 */
+    .portfolio-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
+      background: var(--bg-light);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
     }
-    .footer-title {
-      color: #ffffff;
+    .portfolio-toolbar p { font-size: 0.9rem; color: var(--text-sub); }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: relative;
+    }
+    .portfolio-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #e2e8f0;
+      display: block;
+    }
+    .portfolio-body { padding: 16px; }
+    .portfolio-badge {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 700;
-      font-size: 1rem;
+      background: #e6f6f4;
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
     }
+    .portfolio-body h4 { font-size: 1rem; margin-bottom: 4px; }
+    .portfolio-body p { font-size: 0.85rem; color: var(--text-sub); }
+    .btn-del-photo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    /* 4. SNS 채널 섹션 */
+    .sns-section {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      padding: 50px 24px;
+      text-align: center;
+    }
+    .sns-links-box {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .sns-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .sns-btn:hover { transform: translateY(-3px); opacity: 0.92; }
+    .sns-youtube { background: #ff0000; }
+    .sns-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .sns-kakao { background: #fee500; color: #3c1e1e; }
+    .sns-blog { background: #03c75a; }
+    .sns-facebook { background: #1877f2; }
+
+    /* 5. 안정성 강화된 견적 및 상담신청 섹션 */
+    .contact-section { background: #ffffff; }
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .contact-card {
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 36px 28px;
+    }
+    .contact-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .contact-card p { color: #cbd5e1; margin-bottom: 22px; font-size: 0.95rem; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; margin-bottom: 24px; }
+    .tel-box {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .tel-box .tel {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #5eead4;
+      display: block;
+      text-decoration: none;
+      margin: 6px 0 14px;
+    }
+
+    .form-card {
+      background: var(--bg-light);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 25px rgba(0, 168, 150, 0.08);
+    }
+    .form-card h3 { font-size: 1.35rem; margin-bottom: 6px; color: var(--primary-dark); }
+    .form-card > p { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.98rem;
+      font-family: inherit;
+      background: #ffffff;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    /* 푸터 */
+    footer { background: #0f172a; color: #94a3b8; padding: 38px 24px; font-size: 0.88rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-title { color: #ffffff; font-weight: 700; font-size: 1rem; }
     .btn-setting {
       background: #1e293b;
       color: #cbd5e1;
@@ -371,12 +412,9 @@
       font-size: 0.8rem;
       cursor: pointer;
     }
-    .btn-setting:hover {
-      background: #334155;
-      color: #ffffff;
-    }
+    .btn-setting:hover { background: #334155; color: #ffffff; }
 
-    /* 전화번호 변경 모달 */
+    /* 모달 공통 */
     .modal-backdrop {
       display: none;
       position: fixed;
@@ -389,68 +427,63 @@
     }
     .modal-box {
       background: #ffffff;
-      padding: 28px;
+      padding: 26px;
       border-radius: 14px;
-      max-width: 400px;
+      max-width: 480px;
       width: 100%;
-      box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.22);
     }
-    .modal-box h4 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-      color: var(--primary-dark);
-    }
-    .modal-box p {
-      font-size: 0.88rem;
-      color: var(--text-sub);
-      margin-bottom: 16px;
-    }
-    .modal-box input {
+    .modal-box h4 { font-size: 1.15rem; margin-bottom: 8px; color: var(--primary-dark); }
+    .modal-box p { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 14px; }
+    .modal-box input, .modal-box select {
       width: 100%;
-      padding: 12px;
+      padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 8px;
-      font-size: 1rem;
-      margin-bottom: 16px;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
     }
-    .modal-actions {
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-    }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 6px; }
 
-    @media (max-width: 820px) {
-      .about-grid, .contact-box { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.75rem; }
-      nav ul { gap: 16px; font-size: 0.9rem; }
+    @media (max-width: 860px) {
+      .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 상단 메뉴 -->
+  <!-- 상단 네비게이션 -->
   <header>
     <div class="nav-container">
       <a href="#" class="logo">삼화씨에스 주식회사 <span>SAMHWA CS</span></a>
       <nav>
         <ul>
           <li><a href="#about">회사소개</a></li>
-          <li><a href="#services">주요사업 (18종)</a></li>
-          <li><a href="#contact">견적·상담문의</a></li>
+          <li><a href="#services">19종 서비스</a></li>
+          <li><a href="#portfolio">시공사례</a></li>
+          <li><a href="#snsChannel">공식채널</a></li>
+          <li><a href="#contact">상담문의</a></li>
         </ul>
+        <div class="header-sns">
+          <a href="#" id="headYoutube" class="sns-chip" target="_blank" title="유튜브">YT</a>
+          <a href="#" id="headInsta" class="sns-chip" target="_blank" title="인스타그램">IN</a>
+          <a href="#" id="headKakao" class="sns-chip" target="_blank" title="카카오톡">KT</a>
+          <a href="#" id="headBlog" class="sns-chip" target="_blank" title="블로그">BL</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- 메인 배너 -->
+  <!-- 히어로 배너 -->
   <div class="hero">
     <div class="hero-inner">
       <span class="hero-badge">깨끗한 공간, 신뢰받는 건물관리 파트너</span>
       <h1>삼화씨에스 주식회사가<br>쾌적하고 안전한 환경을 만듭니다</h1>
-      <p>특수청소부터 건물 정기관리, 방역·소독, 시설 유지보수까지<br>검증된 전문 인력과 최신 장비로 빈틈없는 토탈 솔루션을 제공합니다.</p>
+      <p>특수청소부터 건물 정기관리, 방역·소독, 시설 유지보수까지<br>검증된 전문 인력과 최신 장비로 19종 맞춤 토탈 솔루션을 제공합니다.</p>
       <div class="hero-btns">
         <a href="#about" class="btn btn-primary">회사소개 보기</a>
-        <a href="#services" class="btn btn-outline">18종 서비스 전체보기</a>
+        <a href="#services" class="btn btn-outline">19종 서비스 선택·상담신청</a>
       </div>
     </div>
   </div>
@@ -465,17 +498,15 @@
       </div>
 
       <div class="about-grid">
-        <!-- 대표 인사말 -->
         <div class="about-greeting">
           <h3>“보이지 않는 곳까지 완벽하게,<br>고객이 안심할 수 있는 깨끗함을 약속합니다.”</h3>
           <p>안녕하십니까. <strong>삼화씨에스 주식회사</strong>를 찾아주신 고객 여러분께 진심으로 감사드립니다.</p>
           <p>오늘날 건축물과 산업 현장은 더욱 전문화되고 있으며, 단순한 청소를 넘어 체계적인 위생 관리와 안전 유지가 필수적인 시대가 되었습니다.</p>
-          <p>당사는 다년간 축적된 현장 노하우와 18개 분야의 세분화된 전문 서비스를 바탕으로 관공서, 기업 사옥, 상업시설, 공동주택 등 모든 공간에 최적화된 맞춤 관리 서비스를 제공하고 있습니다.</p>
+          <p>당사는 다년간 축적된 현장 노하우와 19개 분야의 세분화된 전문 서비스를 바탕으로 관공서, 기업 사옥, 상업시설, 공동주택 등 모든 공간에 최적화된 맞춤 관리 서비스를 제공하고 있습니다.</p>
           <p>앞으로도 원칙을 지키는 성실한 시공과 책임감 있는 서비스로 고객 여러분의 가장 든든한 파트너가 되겠습니다.</p>
           <div class="about-sign">삼화씨에스 주식회사 대표이사 이은숙</div>
         </div>
 
-        <!-- 회사 개요 표 -->
         <div>
           <table class="company-table">
             <tbody>
@@ -497,7 +528,7 @@
               </tr>
               <tr>
                 <th>주요 사업</th>
-                <td>건물종합관리, 입주·준공청소, 외벽·유리창 청소, 방역소독, 바닥 왁스코팅, 저수조 청소 등 18개 분야</td>
+                <td>건물종합관리, 입주·준공청소, 외벽·유리창 청소, 방역소독, 바닥 왁스코팅, 저수조 청소 등 19개 분야</td>
               </tr>
               <tr>
                 <th>대표전화</th>
@@ -508,7 +539,6 @@
         </div>
       </div>
 
-      <!-- 핵심 경쟁력 4가지 -->
       <div class="strength-grid">
         <div class="strength-card">
           <div class="strength-icon">🛡️</div>
@@ -534,55 +564,110 @@
     </div>
   </section>
 
-  <!-- 2. 18종 주요 사업 영역 -->
+  <!-- 2. 19종 주요 사업 영역 -->
   <section id="services" class="services-section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">OUR SERVICES</span>
-        <h2 class="section-title">18종 전문 서비스 안내</h2>
-        <p class="section-desc">현장 환경과 목적에 맞춘 세분화된 전문 클리닝 및 시설관리 서비스를 제공합니다.</p>
+        <h2 class="section-title">19종 전문 서비스 안내</h2>
+        <p class="section-desc">원하시는 서비스 항목을 클릭하시면 아래 상담신청 양식에 자동으로 선택됩니다.</p>
       </div>
 
-      <div class="service-grid">
-        <div class="service-card"><span class="service-num">SERVICE 01</span><h3>건물 정기위생관리</h3><p>오피스, 빌딩, 상가, 관공서의 쾌적한 업무 환경을 위한 주·월간 정기 청소 관리</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 02</span><h3>준공·입주 청소</h3><p>신축 및 리모델링 건물의 미세먼지, 시멘트가루, 오염물질을 완벽 제거하는 입주 전 정밀 청소</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 03</span><h3>이사·거주 청소</h3><p>아파트, 빌라, 단독주택 등 주거 공간의 묵은 때와 찌든 오염을 깔끔하게 케어</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 04</span><h3>외벽·고소 유리창 청소</h3><p>로프 및 스카이 장비를 활용한 빌딩 외벽, 패널, 대형 유리창의 안전하고 선명한 세척</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 05</span><h3>바닥 세척 및 왁스코팅</h3><p>데코타일, 아스타일, 대리석 등 바닥재 특성에 맞는 박리 세척 및 고광택 보호 코팅</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 06</span><h3>대리석·석재 연마광택</h3><p>스크래치와 광택을 잃은 천연·인조 대리석의 다이아몬드 연마 및 본연의 광택 복원</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 07</span><h3>카페트·소파 습식클리닝</h3><p>사무실 타일카페트, 호텔, 강당의 진드기·얼룩·악취를 제거하는 고온 스팀 및 습식 세탁</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 08</span><h3>방역·살균 소독</h3><p>법정 의무소독 대상 시설 및 다중이용시설의 해충 방제와 바이러스 살균 소독</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 09</span><h3>저수조·물탱크 청소</h3><p>수도법에 따른 위생적인 저수조 내부 고압 세척, 소독 및 수질 안전 관리</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 10</span><h3>시스템 에어컨 분해세척</h3><p>천장형·스탠드 에어컨 완전 분해 고압 세척으로 냉방 효율 향상 및 곰팡이 악취 제거</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 11</span><h3>주방 후드·덕트 청소</h3><p>식당, 급식실, 구내식당의 기름때와 화재 위험 요소를 제거하는 후드·배기덕트 정밀 세척</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 12</span><h3>공장·창고 산업청소</h3><p>제조 공장, 물류센터의 분진, 기름 오염, 고소 구조물 집진 및 바닥 기계 세척</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 13</span><h3>주차장 에폭시·바닥세척</h3><p>지하 및 옥외 주차장의 타이어 자국, 빗물 오염, 미세먼지를 제거하는 탑승식 습식 청소</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 14</span><h3>화재·특수 현장 복구</h3><p>화재 그을음, 냄새 제거 및 특수 오염 현장의 신속한 원상복구 클리닝</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 15</span><h3>태양광 패널 세척</h3><p>발전 효율 저하를 막기 위한 태양광 모듈 표면의 황사·분진·조류 배설물 전문 세척</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 16</span><h3>간판·어닝 세척</h3><p>매장 및 빌딩 간판, 천막 어닝의 찌든 때를 제거하여 첫인상을 살리는 외관 클리닝</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 17</span><h3>새집증후군·탈취 시공</h3><p>유해물질(포름알데히드 등) 저감 및 피톤치드·오존 살균을 통한 실내 공기질 개선</p></div>
-        <div class="service-card"><span class="service-num">SERVICE 18</span><h3>경비·시설관리 인력파견</h3><p>건물 규모와 특성에 맞는 성실한 미화·경비·시설관리 전문 인력 배치 및 운영</p></div>
+      <div class="service-grid" id="serviceGrid"></div>
+    </div>
+  </section>
+
+  <!-- 3. 시공사례 이미지 업로드 및 갤러리 -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PORTFOLIO</span>
+        <h2 class="section-title">현장 시공사례</h2>
+        <p class="section-desc">삼화씨에스 주식회사가 직접 시공한 생생한 현장 작업 사례입니다.</p>
+      </div>
+
+      <div class="portfolio-toolbar">
+        <p>📸 새로운 현장 작업 사진을 직접 등록하여 시공사례를 추가하실 수 있습니다.</p>
+        <button type="button" class="btn btn-primary" style="padding: 10px 18px;" onclick="openUploadModal()">+ 시공사례 사진 올리기</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <!-- 4. 공식 SNS 및 소통 채널 연동 -->
+  <section id="snsChannel" class="sns-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 16px;">
+        <span class="section-tag">OFFICIAL CHANNELS</span>
+        <h2 class="section-title">삼화씨에스 공식 채널 바로가기</h2>
+        <p class="section-desc">블로그, 유튜브, 인스타그램 등 다양한 공식 채널에서 작업 현장과 소식을 확인하세요.</p>
+      </div>
+      <div class="sns-links-box">
+        <a href="#" id="linkYoutube" class="sns-btn sns-youtube" target="_blank">📺 유튜브 채널</a>
+        <a href="#" id="linkInsta" class="sns-btn sns-insta" target="_blank">📷 인스타그램</a>
+        <a href="#" id="linkKakao" class="sns-btn sns-kakao" target="_blank">💬 카카오톡 채널·문의</a>
+        <a href="#" id="linkBlog" class="sns-btn sns-blog" target="_blank">📝 공식 네이버 블로그</a>
+        <a href="#" id="linkFacebook" class="sns-btn sns-facebook" target="_blank">📘 페이스북</a>
+      </div>
+      <div style="margin-top: 20px;">
+        <button type="button" class="btn-setting" onclick="openSnsModal()">⚙️ SNS 주소 및 대표번호 설정하기</button>
       </div>
     </div>
   </section>
 
-  <!-- 3. 견적 및 상담문의 -->
-  <section id="contact">
+  <!-- 5. 견적 및 상담신청 -->
+  <section id="contact" class="contact-section">
     <div class="container">
-      <div class="contact-box">
-        <div class="contact-info">
-          <h3>무료 방문 견적 및 상담 안내</h3>
+      <div class="section-header">
+        <span class="section-tag">CONTACT & ESTIMATE</span>
+        <h2 class="section-title">무료 견적 및 상담신청</h2>
+        <p class="section-desc">서비스 항목을 선택하시고 연락처를 남겨주시면 담당자가 신속히 상담해 드립니다.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-card">
+          <h3>삼화씨에스 상담센터</h3>
           <p>현장 면적과 작업 환경에 따라 가장 합리적이고 정확한 맞춤 견적을 안내해 드립니다.</p>
           <ul class="contact-list">
             <li>📍 <strong>본사 주소:</strong> 충북 충주시 칠금중앙1길 4-9</li>
-            <li>⏰ <strong>상담 시간:</strong> 평일 08:30 ~ 18:00 (긴급 작업 연중무휴 상담)</li>
-            <li>🏢 <strong>사업자등록번호:</strong> 454-88-02009</li>
+            <li>👤 <strong>대표이사:</strong> 이은숙</li>
+            <li>🏢 <strong>사업자번호:</strong> 454-88-02009</li>
+            <li>⏰ <strong>상담 시간:</strong> 평일 08:30 ~ 18:00 (긴급 작업 연중무휴)</li>
           </ul>
+          <div class="tel-box">
+            <span>빠른 전화 상담 연결</span>
+            <a href="tel:043-856-2119" class="tel link-phone"><span class="display-phone">043-856-2119</span></a>
+            <a href="tel:043-856-2119" class="btn btn-primary link-phone" style="width:100%;">지금 바로 전화 걸기</a>
+          </div>
         </div>
-        <div class="contact-cta">
-          <span>빠른 전화 상담</span>
-          <a href="tel:043-856-2119" class="tel link-phone"><span class="display-phone">043-856-2119</span></a>
-          <a href="tel:043-856-2119" class="btn btn-primary link-phone" style="width:100%;">지금 바로 전화 상담하기</a>
+
+        <div class="form-card">
+          <h3>온라인 상담·견적 신청서</h3>
+          <p>19종 서비스를 클릭하거나 아래에서 선택 후 접수해 주세요.</p>
+          <form id="inquiryForm" onsubmit="submitInquiry(event)">
+            <div class="form-group">
+              <label for="serviceSelect">희망 서비스 (19종 중 선택) *</label>
+              <select id="serviceSelect" required></select>
+            </div>
+            <div class="form-group">
+              <label for="clientName">성함 / 업체명 *</label>
+              <input type="text" id="clientName" placeholder="예: 홍길동 / (주)충주상사" required />
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">연락처 *</label>
+              <input type="tel" id="clientPhone" placeholder="예: 010-1234-5678" required />
+            </div>
+            <div class="form-group">
+              <label for="clientRegion">현장 지역 및 면적</label>
+              <input type="text" id="clientRegion" placeholder="예: 충주시 칠금동 / 사무실 약 50평" />
+            </div>
+            <div class="form-group">
+              <label for="clientMemo">문의 내용</label>
+              <textarea id="clientMemo" placeholder="희망 작업일이나 상세 요청사항을 적어주세요."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding: 14px;">무료 견적 상담신청 접수하기</button>
+          </form>
         </div>
       </div>
     </div>
@@ -593,7 +678,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-title">삼화씨에스 주식회사</div>
-        <button type="button" class="btn-setting" onclick="openPhoneModal()">⚙️ 대표번호 설정</button>
+        <button type="button" class="btn-setting" onclick="openSnsModal()">⚙️ 설정 (번호·SNS)</button>
       </div>
       <div>대표이사: 이은숙 | 사업자등록번호: 454-88-02009 | 주소: 충북 충주시 칠금중앙1길 4-9</div>
       <div>대표전화: <span class="display-phone">043-856-2119</span></div>
@@ -601,57 +686,308 @@
     </div>
   </footer>
 
-  <!-- 대표번호 변경 모달 -->
-  <div id="phoneModal" class="modal-backdrop">
+  <!-- 시공사례 업로드 모달 -->
+  <div id="uploadModal" class="modal-backdrop">
     <div class="modal-box">
-      <h4>대표전화번호 변경</h4>
-      <p>추후 개통되는 전국대표번호(예: 1588-0000)를 입력하면 홈페이지 전체 번호가 즉시 변경됩니다.</p>
-      <input type="text" id="phoneInput" placeholder="예: 1588-0000 또는 043-856-2119" />
+      <h4>시공사례 사진 등록</h4>
+      <p>현장 사진 파일과 간단한 설명을 입력하시면 갤러리에 즉시 추가됩니다.</p>
+      <input type="file" id="photoFile" accept="image/*" />
+      <select id="photoCategory"></select>
+      <input type="text" id="photoTitle" placeholder="제목 (예: 충주 OO빌딩 외벽 고압세척)" />
+      <input type="text" id="photoDesc" placeholder="간단한 작업 설명" />
       <div class="modal-actions">
-        <button type="button" class="btn-setting" onclick="closePhoneModal()">취소</button>
-        <button type="button" class="btn btn-primary" style="padding: 8px 16px;" onclick="savePhoneNumber()">저장하기</button>
+        <button type="button" class="btn-setting" onclick="closeUploadModal()">취소</button>
+        <button type="button" class="btn btn-primary" style="padding: 8px 16px;" onclick="addPortfolioItem()">등록하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 설정 모달 (대표번호 및 SNS 링크) -->
+  <div id="snsModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width: 480px;">
+      <h4>대표번호 및 SNS 링크 주소 설정</h4>
+      <p>전국대표번호와 각 SNS(유튜브, 인스타, 카카오톡, 블로그, 페이스북) 주소를 입력해 주세요.</p>
+      
+      <div class="form-group" style="margin-bottom:10px;">
+        <label style="font-size:0.82rem;">대표전화번호</label>
+        <input type="text" id="inputPhone" placeholder="043-856-2119 또는 1588-0000" />
+      </div>
+      <div class="form-group" style="margin-bottom:10px;">
+        <label style="font-size:0.82rem;">유튜브 채널 주소 (URL)</label>
+        <input type="text" id="inputYoutube" placeholder="https://youtube.com/@..." />
+      </div>
+      <div class="form-group" style="margin-bottom:10px;">
+        <label style="font-size:0.82rem;">인스타그램 주소 (URL)</label>
+        <input type="text" id="inputInsta" placeholder="https://instagram.com/..." />
+      </div>
+      <div class="form-group" style="margin-bottom:10px;">
+        <label style="font-size:0.82rem;">카카오톡 채널 주소 (URL)</label>
+        <input type="text" id="inputKakao" placeholder="https://pf.kakao.com/..." />
+      </div>
+      <div class="form-group" style="margin-bottom:10px;">
+        <label style="font-size:0.82rem;">네이버 블로그 주소 (URL)</label>
+        <input type="text" id="inputBlog" placeholder="https://blog.naver.com/..." />
+      </div>
+      <div class="form-group" style="margin-bottom:14px;">
+        <label style="font-size:0.82rem;">페이스북 주소 (URL)</label>
+        <input type="text" id="inputFacebook" placeholder="https://facebook.com/..." />
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-setting" onclick="closeSnsModal()">취소</button>
+        <button type="button" class="btn btn-primary" style="padding: 8px 16px;" onclick="saveSettings()">저장하기</button>
       </div>
     </div>
   </div>
 
   <script>
-    // 기본 대표전화번호 (코드에서 영구 수정할 때도 이 줄의 숫자만 바꾸면 됩니다)
     const DEFAULT_PHONE = "043-856-2119";
+    const DEFAULT_SNS = {
+      youtube: "#",
+      insta: "#",
+      kakao: "#",
+      blog: "#",
+      facebook: "#"
+    };
 
-    function applyPhoneNumber(phone) {
-      document.querySelectorAll(".display-phone").forEach(el => {
-        el.textContent = phone;
+    const SERVICES = [
+      { id: "01", title: "건물 정기위생관리", desc: "오피스, 빌딩, 상가, 관공서의 쾌적한 업무 환경을 위한 주·월간 정기 청소 관리" },
+      { id: "02", title: "준공·입주 청소", desc: "신축 및 리모델링 건물의 미세먼지, 시멘트가루, 오염물질을 완벽 제거하는 정밀 청소" },
+      { id: "03", title: "이사·거주 청소", desc: "아파트, 빌라, 단독주택 등 주거 공간의 묵은 때와 찌든 오염을 깔끔하게 케어" },
+      { id: "04", title: "외벽·고소 유리창 청소", desc: "로프 및 스카이 장비를 활용한 빌딩 외벽, 패널, 대형 유리창의 안전하고 선명한 세척" },
+      { id: "05", title: "바닥 세척 및 왁스코팅", desc: "데코타일, 아스타일, 대리석 등 바닥재 특성에 맞는 박리 세척 및 고광택 보호 코팅" },
+      { id: "06", title: "대리석·석재 연마광택", desc: "스크래치와 광택을 잃은 천연·인조 대리석의 다이아몬드 연마 및 본연의 광택 복원" },
+      { id: "07", title: "카페트·소파 습식클리닝", desc: "사무실 타일카페트, 호텔, 강당의 진드기·얼룩·악취를 제거하는 고온 스팀 세탁" },
+      { id: "08", title: "방역·살균 소독", desc: "법정 의무소독 대상 시설 및 다중이용시설의 해충 방제와 바이러스 살균 소독" },
+      { id: "09", title: "저수조·물탱크 청소", desc: "수도법에 따른 위생적인 저수조 내부 고압 세척, 소독 및 수질 안전 관리" },
+      { id: "10", title: "시스템 에어컨 분해세척", desc: "천장형·스탠드 에어컨 완전 분해 고압 세척으로 냉방 효율 향상 및 곰팡이 제거" },
+      { id: "11", title: "주방 후드·덕트 청소", desc: "식당, 급식실, 구내식당의 기름때와 화재 위험 요소를 제거하는 후드·배기덕트 세척" },
+      { id: "12", title: "공장·창고 산업청소", desc: "제조 공장, 물류센터의 분진, 기름 오염, 고소 구조물 집진 및 바닥 기계 세척" },
+      { id: "13", title: "주차장 에폭시·바닥세척", desc: "지하 및 옥외 주차장의 타이어 자국, 빗물 오염, 미세먼지를 제거하는 탑승식 청소" },
+      { id: "14", title: "화재·특수 현장 복구", desc: "화재 그을음, 냄새 제거 및 특수 오염 현장의 신속한 원상복구 클리닝" },
+      { id: "15", title: "태양광 패널 세척", desc: "발전 효율 저하를 막기 위한 태양광 모듈 표면의 황사·분진·오염물 전문 세척" },
+      { id: "16", title: "간판·어닝 세척", desc: "매장 및 빌딩 간판, 천막 어닝의 찌든 때를 제거하여 첫인상을 살리는 외관 클리닝" },
+      { id: "17", title: "새집증후군·탈취 시공", desc: "유해물질 저감 및 피톤치드·오존 살균을 통한 실내 공기질 개선 시공" },
+      { id: "18", title: "경비·시설관리 인력파견", desc: "건물 규모와 특성에 맞는 성실한 미화·경비·시설관리 전문 인력 배치 및 운영" },
+      { id: "19", title: "기타 특수맞춤 클리닝", desc: "문화재, 학교, 병원, 체육시설 등 현장 특성에 맞춘 맞춤형 특수 위생관리" }
+    ];
+
+    const DEFAULT_PORTFOLIO = [
+      {
+        id: 1,
+        category: "준공·입주 청소",
+        title: "충주 산업단지 내 신축 사옥 준공청소",
+        desc: "내부 분진 제거, 창틀·유리창 정밀 세척 및 바닥 코팅 완료",
+        img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+        isDefault: true
+      },
+      {
+        id: 2,
+        category: "바닥 세척 및 왁스코팅",
+        title: "관공서 및 오피스 바닥 박리·고광택 왁스코팅",
+        desc: "기존 오염 왁스층 완전 제거 후 친환경 고광택 코팅 2회 시공",
+        img: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80",
+        isDefault: true
+      },
+      {
+        id: 3,
+        category: "외벽·고소 유리창 청소",
+        title: "상업빌딩 외벽 패널 및 대형 유리창 세척",
+        desc: "안전 장비 및 전용 세정제를 활용한 외관 유리·프레임 복원 작업",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+        isDefault: true
+      }
+    ];
+
+    function initServices() {
+      const grid = document.getElementById("serviceGrid");
+      const select = document.getElementById("serviceSelect");
+      const photoCat = document.getElementById("photoCategory");
+
+      SERVICES.forEach(s => {
+        const label = `[${s.id}] ${s.title}`;
+        const card = document.createElement("div");
+        card.className = "service-card";
+        card.innerHTML = `
+          <div>
+            <span class="service-num">SERVICE ${s.id}</span>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+          <div class="service-cta">
+            <span>이 항목으로 상담신청</span>
+            <span>→</span>
+          </div>
+        `;
+        card.onclick = () => selectServiceAndScroll(label);
+        grid.appendChild(card);
+
+        const opt = document.createElement("option");
+        opt.value = label;
+        opt.textContent = label;
+        select.appendChild(opt);
+
+        const opt2 = document.createElement("option");
+        opt2.value = s.title;
+        opt2.textContent = s.title;
+        photoCat.appendChild(opt2);
       });
-      document.querySelectorAll(".link-phone").forEach(el => {
-        el.setAttribute("href", "tel:" + phone.replace(/[^0-9]/g, ""));
+    }
+
+    function selectServiceAndScroll(serviceLabel) {
+      const select = document.getElementById("serviceSelect");
+      select.value = serviceLabel;
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => document.getElementById("clientName").focus(), 500);
+    }
+
+    function renderPortfolio() {
+      const grid = document.getElementById("portfolioGrid");
+      const saved = JSON.parse(localStorage.getItem("samhwa_portfolio") || "[]");
+      const items = [...saved, ...DEFAULT_PORTFOLIO];
+
+      grid.innerHTML = "";
+      items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "portfolio-card";
+        card.innerHTML = `
+          ${!item.isDefault ? `<button class="btn-del-photo" onclick="deletePortfolioItem(${item.id})">삭제</button>` : ""}
+          <img src="${item.img}" alt="${item.title}" class="portfolio-img" />
+          <div class="portfolio-body">
+            <span class="portfolio-badge">${item.category}</span>
+            <h4>${item.title}</h4>
+            <p>${item.desc}</p>
+          </div>
+        `;
+        grid.appendChild(card);
       });
     }
 
-    function openPhoneModal() {
-      const current = localStorage.getItem("samhwa_phone") || DEFAULT_PHONE;
-      document.getElementById("phoneInput").value = current;
-      document.getElementById("phoneModal").style.display = "flex";
-    }
+    function openUploadModal() { document.getElementById("uploadModal").style.display = "flex"; }
+    function closeUploadModal() { document.getElementById("uploadModal").style.display = "none"; }
 
-    function closePhoneModal() {
-      document.getElementById("phoneModal").style.display = "none";
-    }
+    function addPortfolioItem() {
+      const fileInput = document.getElementById("photoFile");
+      const category = document.getElementById("photoCategory").value;
+      const title = document.getElementById("photoTitle").value.trim();
+      const desc = document.getElementById("photoDesc").value.trim();
 
-    function savePhoneNumber() {
-      const val = document.getElementById("phoneInput").value.trim();
-      if (!val) {
-        alert("전화번호를 입력해 주세요.");
+      if (!fileInput.files || !fileInput.files[0]) {
+        alert("시공사례 사진 파일을 선택해 주세요.");
         return;
       }
-      localStorage.setItem("samhwa_phone", val);
-      applyPhoneNumber(val);
-      closePhoneModal();
-      alert("대표전화번호가 [" + val + "]로 변경되었습니다.\n(모든 방문자에게 영구 반영하려면 index.html 코드 상단의 DEFAULT_PHONE 값도 함께 수정해 주세요.)");
+      if (!title) {
+        alert("시공사례 제목을 입력해 주세요.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const saved = JSON.parse(localStorage.getItem("samhwa_portfolio") || "[]");
+        saved.unshift({
+          id: Date.now(),
+          category,
+          title,
+          desc: desc || "삼화씨에스 전문 시공 완료 현장",
+          img: e.target.result,
+          isDefault: false
+        });
+        localStorage.setItem("samhwa_portfolio", JSON.stringify(saved));
+        renderPortfolio();
+        closeUploadModal();
+        fileInput.value = "";
+        document.getElementById("photoTitle").value = "";
+        document.getElementById("photoDesc").value = "";
+      };
+      reader.readAsDataURL(fileInput.files[0]);
+    }
+
+    function deletePortfolioItem(id) {
+      if (!confirm("이 시공사례 사진을 삭제하시겠습니까?")) return;
+      const saved = JSON.parse(localStorage.getItem("samhwa_portfolio") || "[]");
+      const filtered = saved.filter(item => item.id !== id);
+      localStorage.setItem("samhwa_portfolio", JSON.stringify(filtered));
+      renderPortfolio();
+    }
+
+    function submitInquiry(e) {
+      e.preventDefault();
+      const service = document.getElementById("serviceSelect").value;
+      const name = document.getElementById("clientName").value.trim();
+      const phone = document.getElementById("clientPhone").value.trim();
+      const region = document.getElementById("clientRegion").value.trim();
+      const memo = document.getElementById("clientMemo").value.trim();
+      const currentCompanyPhone = localStorage.getItem("samhwa_phone") || DEFAULT_PHONE;
+
+      alert(
+        `[삼화씨에스 주식회사 상담신청 접수 안내]\n\n` +
+        `• 희망 서비스: ${service}\n` +
+        `• 신청자/업체: ${name}\n` +
+        `• 연락처: ${phone}\n` +
+        `• 현장/면적: ${region || "미입력"}\n` +
+        `• 문의내용: ${memo || "없음"}\n\n` +
+        `접수가 정상 완료되었습니다! 빠른 유선 상담을 원하시면 대표전화(${currentCompanyPhone})로 연락 바랍니다.`
+      );
+      e.target.reset();
+    }
+
+    function applySettings() {
+      const phone = localStorage.getItem("samhwa_phone") || DEFAULT_PHONE;
+      document.querySelectorAll(".display-phone").forEach(el => el.textContent = phone);
+      document.querySelectorAll(".link-phone").forEach(el => el.setAttribute("href", "tel:" + phone.replace(/[^0-9]/g, "")));
+
+      const sns = JSON.parse(localStorage.getItem("samhwa_sns") || JSON.stringify(DEFAULT_SNS));
+      
+      document.getElementById("headYoutube").href = sns.youtube;
+      document.getElementById("headInsta").href = sns.insta;
+      document.getElementById("headKakao").href = sns.kakao;
+      document.getElementById("headBlog").href = sns.blog;
+
+      document.getElementById("linkYoutube").href = sns.youtube;
+      document.getElementById("linkInsta").href = sns.insta;
+      document.getElementById("linkKakao").href = sns.kakao;
+      document.getElementById("linkBlog").href = sns.blog;
+      document.getElementById("linkFacebook").href = sns.facebook;
+    }
+
+    function openSnsModal() {
+      document.getElementById("inputPhone").value = localStorage.getItem("samhwa_phone") || DEFAULT_PHONE;
+      const sns = JSON.parse(localStorage.getItem("samhwa_sns") || JSON.stringify(DEFAULT_SNS));
+      document.getElementById("inputYoutube").value = sns.youtube === "#" ? "" : sns.youtube;
+      document.getElementById("inputInsta").value = sns.insta === "#" ? "" : sns.insta;
+      document.getElementById("inputKakao").value = sns.kakao === "#" ? "" : sns.kakao;
+      document.getElementById("inputBlog").value = sns.blog === "#" ? "" : sns.blog;
+      document.getElementById("inputFacebook").value = sns.facebook === "#" ? "" : sns.facebook;
+
+      document.getElementById("snsModal").style.display = "flex";
+    }
+
+    function closeSnsModal() { document.getElementById("snsModal").style.display = "none"; }
+
+    function saveSettings() {
+      const phone = document.getElementById("inputPhone").value.trim();
+      if (!phone) { alert("대표전화번호를 입력해 주세요."); return; }
+
+      const sns = {
+        youtube: document.getElementById("inputYoutube").value.trim() || "#",
+        insta: document.getElementById("inputInsta").value.trim() || "#",
+        kakao: document.getElementById("inputKakao").value.trim() || "#",
+        blog: document.getElementById("inputBlog").value.trim() || "#",
+        facebook: document.getElementById("inputFacebook").value.trim() || "#"
+      };
+
+      localStorage.setItem("samhwa_phone", phone);
+      localStorage.setItem("samhwa_sns", JSON.stringify(sns));
+
+      applySettings();
+      closeSnsModal();
+      alert("설정 내용이 성공적으로 저장되었습니다!");
     }
 
     window.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("samhwa_phone");
-      if (saved) applyPhoneNumber(saved);
+      initServices();
+      renderPortfolio();
+      applySettings();
     });
   </script>
 
