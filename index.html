@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼화씨에스 주식회사 | 프리미엄 대형 종합청소관리 전문기업</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    body { font-family: 'Pretendard', sans-serif; }
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(15, 41, 66, 0.92) 0%, rgba(0, 119, 182, 0.88) 100%), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-medal text-amber-400 mr-1"></i> 대형 종합청소관리 전문기업</span>
+        <span class="hidden sm:inline">|</span>
+        <span class="hidden sm:inline"><i class="fa-solid fa-shield-halved text-blue-400 mr-1"></i> 1억원 배상책임보험 가입</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:1588-0000" id="top-phone" class="hover:text-white font-semibold transition"><i class="fa-solid fa-phone text-blue-400 mr-1"></i> 1588-0000</a>
+        <button onclick="openSettingsModal()" class="bg-blue-600/30 hover:bg-blue-600 text-white px-2.5 py-1 rounded transition text-[11px]"><i class="fa-solid fa-gear mr-1"></i> 정보 설정</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-xl bg-blue-900 flex items-center justify-center text-white font-black text-xl shadow-md">三</div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">삼화씨에스</span>
+          <span class="text-[10px] font-semibold text-blue-600 tracking-widest uppercase mt-0.5 block">SAMHWA CS CO., LTD.</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition">회사소개</a>
+        <a href="#catalog" class="hover:text-blue-600 transition">청소카탈로그</a>
+        <a href="#process" class="hover:text-blue-600 transition">작업프로세스</a>
+        <a href="#gallery" class="hover:text-blue-600 transition">시공사례</a>
+        <a href="#estimate" class="hover:text-blue-600 transition">견적문의</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#estimate" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/20 transition">온라인 견적신청</a>
+        <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 p-2"><i class="fa-solid fa-bars text-2xl"></i></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 font-medium">
+      <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-700 py-1">회사소개</a>
+      <a href="#catalog" onclick="toggleMobileMenu()" class="block text-slate-700 py-1">청소카탈로그</a>
+      <a href="#process" onclick="toggleMobileMenu()" class="block text-slate-700 py-1">작업프로세스</a>
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block text-slate-700 py-1">시공사례</a>
+      <a href="#estimate" onclick="toggleMobileMenu()" class="block text-slate-700 py-1">견적문의</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-blue-500/20 text-blue-300 border border-blue-400/30 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-6 tracking-wide">PREMIUM CLEANING & FACILITY MANAGEMENT</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+          공간의 품격을 높이는<br><span class="text-sky-400">프리미엄 종합청소 솔루션</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-200 mb-10 leading-relaxed font-light">
+          오피스, 준공 현장, 관공서, 학교부터 특수·외벽 클리닝까지! 숙련된 전문 인력과 체계적인 직영 시스템으로 최상의 쾌적함을 선사합니다.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#estimate" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-sky-500/30 transition text-base">간편 견적 문의하기</a>
+          <a href="tel:1588-0000" id="hero-phone-btn" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-xl backdrop-blur transition text-base flex items-center gap-2"><i class="fa-solid fa-phone"></i> 전화 상담 연결</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="bg-white border-b border-slate-100 py-10 shadow-sm relative z-20 -mt-8 max-w-6xl mx-auto rounded-2xl px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-3xl font-black text-blue-600 mb-1">18+</div>
+      <div class="text-xs font-medium text-slate-500">전문 청소 서비스 영역</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-blue-600 mb-1">2,500+</div>
+      <div class="text-xs font-medium text-slate-500">누적 시공 및 관리 현장</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-blue-600 mb-1">100%</div>
+      <div class="text-xs font-medium text-slate-500">직영 전문 인력 투입</div>
+    </div>
+    <div>
+      <div class="text-3xl font-black text-blue-600 mb-1">99.8%</div>
+      <div class="text-xs font-medium text-slate-500">고객 만족도 및 재계약율</div>
+    </div>
+  </section>
+
+  <!-- CATALOG SECTION -->
+  <section id="catalog" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-blue-600 text-xs font-bold tracking-widest uppercase block mb-3">SERVICE CATALOG</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">삼화씨에스 18대 전문 청소 카탈로그</h2>
+      <p class="text-slate-600 text-sm sm:text-base">원하시는 서비스 항목을 선택하여 상세 작업 범위와 투입 장비를 확인하세요.</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition bg-blue-600 text-white shadow-md">전체 보기 (18)</button>
+      <button onclick="filterCategory('living')" id="btn-living" class="cat-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-600 hover:bg-slate-100 shadow-sm border border-slate-200">주거·입주 클리닝</button>
+      <button onclick="filterCategory('building')" id="btn-building" class="cat-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-600 hover:bg-slate-100 shadow-sm border border-slate-200">건물·관공서·학교</button>
+      <button onclick="filterCategory('special')" id="btn-special" class="cat-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-600 hover:bg-slate-100 shadow-sm border border-slate-200">특수·재난·방역</button>
+      <button onclick="filterCategory('facility')" id="btn-facility" class="cat-btn px-5 py-2.5 rounded-xl font-semibold text-sm transition bg-white text-slate-600 hover:bg-slate-100 shadow-sm border border-slate-200">외벽·설비·시설케어</button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="max-w-md mx-auto mb-12">
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input type="text" id="serviceSearch" onkeyup="searchServices()" placeholder="필요한 청소 서비스를 검색하세요 (예: 화재, 외벽, 학교...)" class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="serviceGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Loaded dynamically via JS -->
+    </div>
+  </section>
+
+  <!-- WORK PROCESS -->
+  <section id="process" class="bg-slate-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-blue-400 text-xs font-bold tracking-widest uppercase block mb-3">SYSTEMATIC PROCESS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">체계적인 4단계 클리닝 프로세스</h2>
+        <p class="text-slate-400 text-sm sm:text-base">현장 진단부터 사후 검수까지 철저한 표준 매뉴얼로 진행됩니다.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-slate-800/80 border border-slate-700/60 p-8 rounded-2xl relative">
+          <span class="text-5xl font-black text-blue-500/30 absolute top-4 right-6">01</span>
+          <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-6 shadow-lg"><i class="fa-solid fa-clipboard-question"></i></div>
+          <h3 class="text-xl font-bold mb-3">1. 현장 진단 및 상담</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">고객 요청 사항 분석 및 현장 평수·오염도에 따른 맞춤형 견적 산출</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700/60 p-8 rounded-2xl relative">
+          <span class="text-5xl font-black text-blue-500/30 absolute top-4 right-6">02</span>
+          <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-6 shadow-lg"><i class="fa-solid fa-people-carry-box"></i></div>
+          <h3 class="text-xl font-bold mb-3">2. 전문 장비 및 팀 투입</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">구역별 전문 직영 인력 배치 및 고온 스팀, 친환경 세제 등 전용 장비 투입</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700/60 p-8 rounded-2xl relative">
+          <span class="text-5xl font-black text-blue-500/30 absolute top-4 right-6">03</span>
+          <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-6 shadow-lg"><i class="fa-solid fa-broom"></i></div>
+          <h3 class="text-xl font-bold mb-3">3. 정밀 클리닝 시공</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">미세먼지, 찌든 때, 유해 물질 완벽 제거 및 살균·소독 공정 진행</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700/60 p-8 rounded-2xl relative">
+          <span class="text-5xl font-black text-blue-500/30 absolute top-4 right-6">04</span>
+          <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold mb-6 shadow-lg"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="text-xl font-bold mb-3">4. 고객 검수 및 피드백</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">고객 입회하에 최종 검수 후 미흡한 부분 즉시 보완 및 완료 처리</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION (SLIDER & UPLOAD) -->
+  <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 overflow-hidden">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+      <div>
+        <span class="text-blue-600 text-xs font-bold tracking-widest uppercase block mb-3">WORK GALLERY</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">현장 시공사례 갤러리</h2>
+      </div>
+      <button onclick="openUploadModal()" class="bg-slate-900 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl shadow transition flex items-center gap-2 text-sm">
+        <i class="fa-solid fa-camera"></i> 현장 사진 추가하기
+      </button>
+    </div>
+
+    <!-- Horizontal Slider Container -->
+    <div class="relative">
+      <div id="gallerySlider" class="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x scrollbar-thin scrollbar-thumb-slate-300">
+        <!-- Gallery Items rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATE & CONTACT SECTION -->
+  <section id="estimate" class="bg-slate-100 py-24 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-8 sm:p-12">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="text-blue-600 text-xs font-bold tracking-widest uppercase block mb-2">QUICK ESTIMATE</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-3">실시간 온라인 견적 신청</h2>
+          <p class="text-slate-600 text-sm">원하시는 서비스를 체크하고 문의 남겨주시면 담당자가 신속하게 연락드립니다.</p>
+        </div>
+
+        <form onsubmit="submitEstimate(event)" class="space-y-6">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">신청자명 / 담당자명 *</label>
+              <input type="text" id="estName" required placeholder="성함 또는 기업명을 입력하세요" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">연락처 *</label>
+              <input type="tel" id="estPhone" required placeholder="010-0000-0000" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">현장 주소 / 지역 *</label>
+            <input type="text" id="estLocation" required placeholder="예: 서울특별시 강남구 테헤란로 123" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">청소 희망 서비스 선택 (중복 선택 가능)</label>
+            <div id="estimateCheckboxes" class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-200 max-h-56 overflow-y-auto">
+              <!-- Checkboxes rendered dynamically -->
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">상세 문의 내용</label>
+            <textarea id="estMemo" rows="4" placeholder="평수, 청소 희망 일자, 특이사항 등을 적어주세요." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-600/30 transition text-base">
+            무료 견적 빠른 접수하기
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-lg">三</div>
+          <span class="text-white font-extrabold text-lg">삼화씨에스 주식회사</span>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+          고품격 종합청소관리 및 시설위생 전문기업. 확실한 시공과 철저한 사후관리로 보답하겠습니다.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">고객센터</h4>
+        <p class="text-2xl font-black text-white mb-2" id="footer-phone">1588-0000</p>
+        <p class="text-xs text-slate-400 mb-1">평일 09:00 - 18:00 (토/일 휴무)</p>
+        <p class="text-xs text-slate-400">점심시간 12:00 - 13:00</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">본사 및 지점 안내</h4>
+        <p class="text-sm text-slate-400 mb-2" id="footer-address"><i class="fa-solid fa-location-dot mr-2 text-blue-500"></i> 서울특별시 강남구 테헤란로 123, 삼화빌딩</p>
+        <p class="text-sm text-slate-400"><i class="fa-solid fa-file-invoice mr-2 text-blue-500"></i> 사업자등록번호: <span id="footer-biz">120-81-00000</span></p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">바로가기</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#catalog" class="hover:text-white transition">청소 서비스 전체보기</a></li>
+          <li><a href="#estimate" class="hover:text-white transition">온라인 견적 문의</a></li>
+          <li><a href="#gallery" class="hover:text-white transition">시공사례 갤러리</a></li>
+          <li><button onclick="openSettingsModal()" class="hover:text-white transition text-blue-400">홈페이지 정보 변경 설정</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      <p>&copy; <span id="copyYear">2026</span> SAMHWA CS CO., LTD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK BAR -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <a href="https://pf.kakao.com" id="floatKakao" target="_blank" class="w-14 h-14 bg-amber-400 hover:bg-amber-500 text-slate-900 rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110" title="카카오톡 1:1 상담">
+      <i class="fa-solid fa-comment"></i>
+    </a>
+    <a href="tel:1588-0000" id="floatPhone" class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110" title="전화 상담">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <!-- SERVICE DETAIL MODAL -->
+  <div id="serviceModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 relative shadow-2xl transform transition-all">
+      <button onclick="closeServiceModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+      <span id="modalBadge" class="inline-block bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full mb-3"></span>
+      <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-900 mb-3"></h3>
+      <p id="modalSummary" class="text-slate-600 text-sm mb-6 leading-relaxed"></p>
+      
+      <div class="space-y-4 mb-8 bg-slate-50 p-5 rounded-2xl border border-slate-100 text-sm">
+        <div>
+          <span class="font-bold text-slate-800 block mb-1"><i class="fa-solid fa-check text-blue-600 mr-2"></i>주요 작업 범위</span>
+          <p id="modalScope" class="text-slate-600 pl-5"></p>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block mb-1"><i class="fa-solid fa-toolbox text-blue-600 mr-2"></i>투입 장비 및 약품</span>
+          <p id="modalEquipment" class="text-slate-600 pl-5"></p>
+        </div>
+        <div>
+          <span class="font-bold text-slate-800 block mb-1"><i class="fa-solid fa-bullseye text-blue-600 mr-2"></i>추천 대상</span>
+          <p id="modalTarget" class="text-slate-600 pl-5"></p>
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <button onclick="closeServiceModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-xl transition text-sm">닫기</button>
+        <a href="#estimate" onclick="closeServiceModal()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition text-center text-sm shadow-lg shadow-blue-600/20">이 서비스 견적 신청</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settingsModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 relative shadow-2xl">
+      <button onclick="closeSettingsModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="text-xl font-extrabold text-slate-900 mb-2">홈페이지 정보 간편 설정</h3>
+      <p class="text-xs text-slate-500 mb-6">입력하신 정보는 브라우저에 즉시 저장되어 전체 화면에 반영됩니다.</p>
+      <div class="space-y-4 text-sm">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">대표 전화번호</label>
+          <input type="text" id="setPhoneInput" value="1588-0000" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">카카오톡 채널 링크 (URL)</label>
+          <input type="text" id="setKakaoInput" value="https://pf.kakao.com" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">본사 주소</label>
+          <input type="text" id="setAddressInput" value="서울특별시 강남구 테헤란로 123" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">사업자등록번호</label>
+          <input type="text" id="setBizInput" value="120-81-00000" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <button onclick="saveSettings()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition shadow-md">설정 저장하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPLOAD GALLERY MODAL -->
+  <div id="uploadModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 relative shadow-2xl">
+      <button onclick="closeUploadModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="text-xl font-extrabold text-slate-900 mb-2">현장 시공사례 사진 추가</h3>
+      <p class="text-xs text-slate-500 mb-6">작업 현장 사진과 설명 입력 시 하단 슬라이드에 즉시 등록됩니다.</p>
+      <form onsubmit="addGalleryItem(event)" class="space-y-4 text-sm">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">현장 제목 *</label>
+          <input type="text" id="galTitle" required placeholder="예: 서울 OO오피스 정밀 준공청소" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">지역 / 규모 *</label>
+          <input type="text" id="galLocation" required placeholder="예: 서울 강남구 / 150평" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">사진 선택 (PC/모바일 갤러리) *</label>
+          <input type="file" id="galFile" accept="image/*" required class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition shadow-md">슬라이드에 추가하기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 18대 전문 청소 서비스 데이터
+    const services = [
+      { id: 1, category: "living", title: "입주·이사청소", badge: "프리미엄 주거", summary: "신축 아파트 및 이사 전후 미세분진, 유해물질 완벽 제거", scope: "창틀, 주방 후드, 싱크대, 욕실, 베란다 탈거 청소", equipment: "고온 스팀기, HEPA 진공청소기, 친환경 전용세제", target: "신축 및 이사 예정인 아파트, 빌라, 오피스텔" },
+      { id: 2, category: "living", title: "준공청소", badge: "대형 현장", summary: "건축·인테리어 공사 후 남은 시멘트 가루, 페인트 자국 완벽 세척", scope: "내외부 유리창, 바닥 잔여물 제거, 몰딩 풀 자국 제거", equipment: "산업용 폴리셔, 고압세척기, 특수 세정제", target: "신축 빌딩, 상가, 공장, 대형 인테리어 완료 현장" },
+      { id: 3, category: "building", title: "건물종합관리", badge: "정기 계약", summary: "로비, 복도, 계단 등 공용구간 체계적 상주 및 순회 정기관리", scope: "바닥 광택 유지, 유리창 세척, 쓰레기 분리수거장 정리", equipment: "전문 미화 장비, 친환경 왁스 및 소모품", target: "빌딩, 오피스텔, 상가 주택 건물주 및 관리사무소" },
+      { id: 4, category: "special", title: "특수청소", badge: "전문 대응", summary: "고난도 오염 구역 및 특수 환경 전문 복원 클리닝", scope: "오염물 제거, 살균 탈취, 폐기물 처리 연계", equipment: "산업용 오존살균기, 방호장비, 특수 약품", target: "특수 오염 발생 세대, 고난도 방치 공간" },
+      { id: 5, category: "facility", title: "공장설비청소", badge: "산업 시설", summary: "제조 공장 내 생산 설비, 기계 찌든 때 및 분진 제거", scope: "생산라인 파이프, 덕트 주변, 바닥 슬러지 제거", equipment: "고압 스팀기, 산업용 흡입기, 전용 케미컬", target: "제조 공장, 물류센터, 산업 단지 입주 기업" },
+      { id: 6, category: "special", title: "화재청소", badge: "재난 복복구", summary: "화재로 인한 그을음, 그을린 냄새 및 유해 그을음 완벽 제거", scope: "그을음 세척, 벽체 연기 냄새 탈취, 폐기물 분류", equipment: "고성능 탈취기, 공기정화기, 특수 그을음 제거제", target: "화재 피해 발생 주택, 상가, 공장 건물" },
+      { id: 7, category: "building", title: "관공서청소", badge: "공공 기관", summary: "엄격한 보안과 청결 규격에 맞춘 공공기관 전문 청소", scope: "민원실, 회의실, 사무공간 및 공용 화장실 정밀 소독", equipment: "친환경 인증 약품, 무소음 청소 장비", target: "시청, 구청, 주민센터, 공공기관 건물" },
+      { id: 8, category: "building", title: "학교청소", badge: "교육 시설", summary: "학생들의 건강을 위한 교실, 강당, 체육관 위생 클리닝", scope: "책걸상 정돈 및 소독, 바닥 왁스 코팅, 특별실 위생 관리", equipment: "대형 바닥 세척기, 고온 스팀살균기", target: "초·중·고등학교, 대학교, 학원 및 교육원" },
+      { id: 9, category: "facility", title: "조형물청소", badge: "랜드마크", summary: "도심 속 예술 조형물 및 공공 기념물 외장 관리", scope: "대기 오염 물질 세척, 표면 보호 코팅, 오염물 제거", equipment: "로프 고소작업 장비, 저압 세척기", target: "지자체, 대기업 사옥, 아파트 단지 내 조형물" },
+      { id: 10, category: "special", title: "방역소독", badge: "위생 방역", summary: "법정 감염병 예방 및 유해 해충 박멸을 위한 토탈 방역", scope: "공간 살균 소독, 잔류 분무 소독, 바퀴벌레·모기 방제", equipment: "초미립자 연막기, ULV 분무기, 전문 방역 약품", target: "식당, 사무실, 병원, 학교, 다중이용시설" },
+      { id: 11, category: "building", title: "건물정기청소(계단·사무실)", badge: "인기 서비스", summary: "주기적인 방문을 통한 계단실, 복도 및 소규모 사무실 청결 유지", scope: "계단 쓸기/닦기, 손잡이 살균 소독, 사무실 쓰레기 수거", equipment: "극세사 밀대, 친환경 세정제, 소독 스프레이", target: "다세대 주택, 빌라, 소기업 사무실" },
+      { id: 12, category: "facility", title: "외벽청소", badge: "고소 작업", summary: "건물 외관의 찌든 때, 매연, 물때를 말끔히 세척하는 고소 작업", scope: "유리 외벽, 대리석 및 패널 외장재 고압 세척", equipment: "스카이 장비, 로프 고소 작업 세트, 고압 세척기", target: "빌딩, 오피스텔, 상가건물 관리단" },
+      { id: 13, category: "facility", title: "유리창청소", badge: "투명 케어", summary: "손이 닿지 않는 창문과 쇼윈도의 기름때와 얼룩 제거", scope: "유리창 전면 세척, 실리콘 곰팡이 제거, 방충망 먼지 제거", equipment: "창문 전용 스퀴지, 유리 세정 특수 스크레이퍼", target: "상가 쇼윈도, 아파트 거실 창, 빌딩 통유리" },
+      { id: 14, category: "facility", title: "수영장청소", badge: "특수 시설", summary: "수영장 타일 물때, 물때 조류 제거 및 위생 살균", scope: "물 배출 후 바닥 및 벽면 세척, 타일 메지 보수 연계, 살균", equipment: "고압 세수기, 수중 진공청소기, 친환경 살균제", target: "호텔 수영장, 피트니스센터, 아파트 커뮤니티 풀장" },
+      { id: 15, category: "facility", title: "연못·분수대 청소", badge: "경관 시설", summary: "조경 연못 및 분수대 내부 이물질, 이끼 및 침전물 제거", scope: "퇴적물 준공 및 석축 세척, 살균 및 수질 정화 작업", equipment: "대용량 양수기, 고압 세척기, 준공 장비", target: "공원, 아파트 단지 내 조경 연못 및 분수대" },
+      { id: 16, category: "special", title: "쓰레기집청소", badge: "원스톱 복원", summary: "방치된 대량의 쓰레기 수거, 폐기물 처리 및 살균 탈취", scope: "생활 폐기물 분류 및 수거, 내부 전체 세척 및 탈취", equipment: "대형 폐기물 마대, 스팀 살균기, 공기살균 탈취기", target: "이사 전후 방치 세대, 유품 정리, 원룸 퇴거 현장" },
+      { id: 17, category: "facility", title: "닥트청소", badge: "화재 예방", summary: "주방 후드 및 배기 닥트 내부 기름때 및 유증기 제거", scope: "후드 필터 세척, 배기 덕트 내부 스케일 제거 및 화재 예방", equipment: "덕트 전용 회전 브러시, 고온 스팀기, 기름때 분해제", target: "대형 식당, 구내식당, 상가 음식점 주방" },
